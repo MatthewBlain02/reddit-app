@@ -8,22 +8,24 @@ import { Article } from './article/article.model';
 })
 export class AppComponent {
 
-  articles:Article[];
+  articles: Article[];
 
-  constructor(){
-    this.articles=[
+  constructor() {
+    this.articles = [
       new Article('Angular', 'http://angular.io', 5),
       new Article('Google', 'http://google.ie', 3),
       new Article('TikTok', 'http://tiktok.com', 1)
     ];
   }
-  addArticle(title:HTMLInputElement, link:HTMLInputElement):Boolean {
-    this.articles.push(new Article(title.value,link.value,0));
-    title.value='';
-    link.value='';
-  
+  addArticle(title: HTMLInputElement, link: HTMLInputElement): Boolean {
+    this.articles.push(new Article(title.value, link.value, 0));
+    title.value = '';
+    link.value = '';
+
     console.log(`Adding Article Title ${title.value} And Adding Article Link ${link.value}`);
-  return false;
-}
-  title = 'reddit-app';
+    return false;
+  }
+  sortedArticles():Article[]{
+    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+  }
 }

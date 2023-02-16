@@ -12,6 +12,7 @@
                     {{ article.title }}
                 </a>
             </h5>
+           <p><small>{{ article.domain() }}</small></p> 
             <a href (click)="article.voteUp()">
                 <i class="fas fa-arrow-up"></i>
                 upvote
