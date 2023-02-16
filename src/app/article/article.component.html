@@ -1,21 +1,29 @@
 <div class="card mb-3 col-6">
-    <div class="row">
-        <div class="card-header pull-left">
-            <h3> {{ votes }} </h3>
+    <div class="row g-0">
+        <div class="col-3">
+            <div class="card-header pull-left">
+            <h3> {{ article.votes }} </h3>
             <h4>Points</h4>
         </div>
-        <div class="card-body">
-            <h5 class="card-title"> <a class="" href="{{ link }}">
-                    {{ title }}
-                </a></h5>
-            <a href (click)="voteUp()">
+        </div>
+        <div class="col-6">
+           <div class="card-body">
+            <h5 class="card-title"> <a class="" href="{{ article.link }}">
+                    {{ article.title }}
+                </a>
+            </h5>
+            <a href (click)="article.voteUp()">
                 <i class="fas fa-arrow-up"></i>
                 upvote
             </a>
-            <a href (click)="voteDown()">
+            <a href (click)="article.voteDown()">
                 <i class="fas fa-arrow-down"></i>
                 downvote
             </a>
         </div>
+        </div>
+    
+        
     </div>
 </div>
+
